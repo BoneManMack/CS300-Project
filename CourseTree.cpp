@@ -17,7 +17,7 @@
 
 using namespace std;
 
-/*// FIXME: delete this nonsense
+// FIXME: delete this nonsense
 // Open file function
 void fileOpener() {
     // Declare variable to store file name
@@ -42,7 +42,7 @@ void fileOpener() {
 
     // close file
     courseFile.close();
-}*/
+}
 
 // Loads courses
 /*void loadCourses(string csvPath, CourseTree* cTree) {
@@ -103,10 +103,10 @@ int main() {
     CsvReader reader;
     vector<CsvLine> lines;
 
-    lines = reader.read("Module 7 project input.csv");
+    /*lines = reader.read("Module 7 project input.csv");
     for (auto line : lines) {
         cout << "Num " << line.getString(0) << " Name " << line.getString(1) << " pre1 " << line.getString(2) << " pre2 " << line.getString(3) << endl;
-    }
+    }*/
 
     // While loop to maintain fuunction until user input the exit command
     while (menuControl != 4) {
@@ -128,9 +128,9 @@ int main() {
             case 1:
                 // Prompt user and get get input for file name
                 cout << "Input file name: ";
-                cin >> userFile;
+                //cin >> userFile;
                 //loadCourses(userFile, cTree);
-                //fileOpener();
+                fileOpener();
                 break;
             // Prints all courses in alpha-numeric order
             case 2:
