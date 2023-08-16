@@ -21,12 +21,30 @@ vector<CsvLine> CsvReader::read(string fileName) {
     vector<CsvLine> lines;
     inputFile.open(fileName);
 
+    int courseCount = 0;
+    string temp;
+
+    while (inputFile.peek() != EOF) {
+        getline(inputFile, temp);
+        ++courseCount;
+    }
+
+    lines.resize(courseCount);
+
     string line = "";
-    while (getline(inputFile, line)) {
-        CsvLine csvLine;
+    CsvLine csvLine;
+    for (int i = 0; i < courseCount; ++i) {
+        getline(inputFile, line);
         csvLine.parse(line);
         lines.push_back(csvLine);
     }
+
+    
+    /*while (getline(inputFile, line)) {
+        
+        csvLine.parse(line);
+        lines.push_back(csvLine);
+    }*/
 
     return lines;
 

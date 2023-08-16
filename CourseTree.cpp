@@ -13,7 +13,7 @@
 // Imports data structure, node, and course object
 #include "dataStructure.hpp"
 #include "csvreader.hpp"
-#include "CSVparser.hpp"
+//#include "CSVparser.hpp"
 
 using namespace std;
 
@@ -45,7 +45,7 @@ void fileOpener() {
 }*/
 
 // Loads courses
-void loadCourses(string csvPath, CourseTree* cTree) {
+/*void loadCourses(string csvPath, CourseTree* cTree) {
     // Initialize csv parser with given path
     csv::Parser file = csv::Parser(csvPath);
     // read and display header row - optional
@@ -74,7 +74,7 @@ void loadCourses(string csvPath, CourseTree* cTree) {
     } catch (csv::Error &e) {
         std::cerr << e.what() << std::endl;
     }
-}
+}*/
 
 // Prints searched for course to screen
 void displayCourse(Course course) {
@@ -100,13 +100,13 @@ int main() {
     Course course;
     string userFile;
 
-    /*CsvReader reader;
+    CsvReader reader;
     vector<CsvLine> lines;
 
     lines = reader.read("Module 7 project input.csv");
     for (auto line : lines) {
         cout << "Num " << line.getString(0) << " Name " << line.getString(1) << " pre1 " << line.getString(2) << " pre2 " << line.getString(3) << endl;
-    }*/
+    }
 
     // While loop to maintain fuunction until user input the exit command
     while (menuControl != 4) {
@@ -129,7 +129,7 @@ int main() {
                 // Prompt user and get get input for file name
                 cout << "Input file name: ";
                 cin >> userFile;
-                loadCourses(userFile, cTree);
+                //loadCourses(userFile, cTree);
                 //fileOpener();
                 break;
             // Prints all courses in alpha-numeric order

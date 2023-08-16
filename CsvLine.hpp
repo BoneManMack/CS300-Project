@@ -23,13 +23,16 @@ public:
     CsvLine operator = (const CsvLine& other) {
         values = other.values;
     }
+
     // default destructor
     ~CsvLine() {}
+
+    // for parsing line in CSV file
     void parse(string line, char delimiter = ',');
     string getString(int column);
 };
 
-
+// Declare method for parsing CSV line
 void CsvLine::parse(string line, char delimiter) {
     stringstream inLine(line);
     string temp = "";
